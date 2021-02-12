@@ -4,7 +4,7 @@
  */
 {
 	// Definitions (extended format supported, see extra-field.txt).
-	// Шаблоны (поддерживается расширенный формат, см. extra-field.txt).
+	// Шаблоны (поддерживается расширенный формат, см. extra-field_ru.txt).
 	"def": {
 		// Enemy spotted status marker.
 		// Маркер статуса засвета противника.
@@ -17,7 +17,7 @@
 			"alpha": "{{a:spotted}}",
 			// x position.
 			// положение по горизонтали.
-			"x": 80,
+			"x": 88,
 			// y position.
 			// положение по вертикали.
 			"y": -2,
@@ -38,7 +38,7 @@
 		// Шаблон маркера сервиса XMQP.
 		"xmqpServiceMarker": {
 			"enabled": true,
-			"x": 80, "y": -2, "align": "center", "bindToIcon": true,
+			"x": 88, "y": -2, "align": "center", "bindToIcon": true,
 			"textFormat": {
 				"font": "xvm",
 				"size": 24
@@ -73,7 +73,7 @@
 			"hotKeyCode": 56, "onHold": "true", "visibleOnHotKey": true, "bindToIcon": true, "alpha": "{{alive?100|0}}",
 			"x": 96, "width": 72, "y": 4,
 			"textFormat": { "font": "$FieldFont", "size": 11, "color": "0xD9D9D9", "bold": "true", "align": "center" },
-			"format": "<font alpha='{{alive?{{ready?#FF|#80}}|#80}}'>{{alive?{{hp|{{hp-max}}}}|0/{{hp-max}}}}</font>",
+			"format": "<font alpha='{{alive?{{ready?#FF|#80}}|#80}}'>{{alive?{{hp|{{hp-max}}}}|{{l10n:Destroyed}}}}</font>",
 			"shadow": { "enabled": true, "color": "0x000000", "alpha": 100, "blur": 4, "strength": 1, "distance": 0, "angle": 0 }
 		}
 	},
@@ -83,8 +83,8 @@
 		// false - disable.
 		// false - отключить.
 		"enabled": true,
-		// Opacity percentage of the panels. 0 - transparent, 100 - opaque.
-		// Прозрачность в процентах ушей. 0 - прозрачные, 100 - не прозрачные.
+		// Opacity percentage of the background panels. 0 - transparent, 100 - opaque.
+		// Прозрачность в процентах подложки ушей. 0 - прозрачная, 100 - не прозрачная.
 		"alpha": 80,
 		// Opacity percentage of icons in the panels. 0 - transparent ... 100 - opaque.
 		// Прозрачность в процентах иконок в ушах. 0 - прозрачные, 100 - не прозрачные.
@@ -201,7 +201,7 @@
 			// Ширина поля фрагов. По умолчанию: 24.
 			"fragsWidth": 24,
 			// Display format for frags (macros allowed, see macros.txt).
-			// Формат отображения фрагов (допускаются макроподстановки, см. macros.txt).
+			// Формат отображения фрагов (допускаются макроподстановки, см. macros_ru.txt).
 			"fragsFormatLeft": "{{frags}}",
 			"fragsFormatRight": "{{frags}}",
 			// Shadow for frags field (default null = no shadow, as in vanillas client).
@@ -229,8 +229,8 @@
 			// Максимальная ширина поля имени игрока. По умолчанию: 158.
 			"nickMaxWidth": 158,
 			// Display format for player name (macros allowed, see macros.txt).
-			// Формат отображения имени игрока (допускаются макроподстановки, см. macros.txt).
-			"nickFormatLeft": "<font face='mono' size='{{xvm-stat?13|0}}' color='{{c:xr}}' alpha='{{alive?#FF|#80}}'>{{r}}</font> {{name%.15s~..}}<font alpha='#A0'>{{clan}}</font>",
+			// Формат отображения имени игрока (допускаются макроподстановки, см. macros_ru.txt).
+			"nickFormatLeft": "<font face='mono' size='{{xvm-stat?13|0}}' color='{{c:xr}}' alpha='{{alive?#FF|#80}}'>{{r}}</font> {{name%.{{anonym?13|15}}s~..}}{{anonym? <font face='xvm' size='19'>&#x11E;</font>}}<font alpha='#A0'>{{clan}}</font>",
 			"nickFormatRight": "<font alpha='#A0'>{{clan}}</font>{{name%.15s~..}} <font face='mono' size='{{xvm-stat?13|0}}' color='{{c:xr}}' alpha='{{alive?#FF|#80}}'>{{r}}</font>",
 			// Shadow for player name field (default null = no shadow, as in vanillas client).
 			// Тень для поля имени игрока (по умолчанию null = без тени, как в чистом клиенте).
@@ -244,7 +244,7 @@
 			// Ширина поля названия танка. По умолчанию: 72.
 			"vehicleWidth": 72,
 			// Display format for vehicle name (macros allowed, see macros.txt).
-			// Формат отображения названия танка (допускаются макроподстановки, см. macros.txt).
+			// Формат отображения названия танка (допускаются макроподстановки, см. macros_ru.txt).
 			"vehicleFormatLeft": "{{vehicle}}",
 			"vehicleFormatRight": "{{vehicle}}",
 			// Shadow for vehicle name field (default null = no shadow, as in vanillas client).
@@ -318,7 +318,7 @@
 			// Ширина поля фрагов. По умолчанию: 24.
 			"fragsWidth": 24,
 			// Display format for frags (macros allowed, see macros.txt).
-			// Формат отображения фрагов (допускаются макроподстановки, см. macros.txt).
+			// Формат отображения фрагов (допускаются макроподстановки, см. macros_ru.txt).
 			"fragsFormatLeft": "{{frags}}",
 			"fragsFormatRight": "{{frags}}",
 			// Shadow for frags field (default null = no shadow, as in vanillas client).
@@ -346,8 +346,8 @@
 			// Максимальная ширина поля имени игрока. По умолчанию: 158.
 			"nickMaxWidth": 158,
 			// Display format for player nickname (macros allowed, see macros.txt).
-			// Формат отображения имени игрока (допускаются макроподстановки, см. macros.txt).
-			"nickFormatLeft": "<font color='{{c:xr}}' alpha='{{alive?#FF|#80}}'>{{name%.12s~..}}</font> <font alpha='#A0'>{{clan}}</font>",
+			// Формат отображения имени игрока (допускаются макроподстановки, см. macros_ru.txt).
+			"nickFormatLeft": "<font color='{{c:xr}}' alpha='{{alive?#FF|#80}}'>{{name%.{{anonym?10|12}}s~..}}</font>{{anonym? <font face='xvm' size='19'>&#x11E;</font>}} <font alpha='#A0'>{{clan}}</font>",
 			"nickFormatRight": "<font alpha='#A0'>{{clan}}</font> <font color='{{c:xr}}' alpha='{{alive?#FF|#80}}'>{{name%.12s~..}}</font>",
 			// Shadow for player name field (default null = no shadow, as in vanillas client).
 			// Тень для поля имени игрока (по умолчанию null = без тени, как в чистом клиенте).
@@ -361,7 +361,7 @@
 			// Ширина поля названия танка. По умолчанию: 72.
 			"vehicleWidth": 72,
 			// Display format for vehicle name (macros allowed, see macros.txt).
-			// Формат отображения названия танка (допускаются макроподстановки, см. macros.txt).
+			// Формат отображения названия танка (допускаются макроподстановки, см. macros_ru.txt).
 			"vehicleFormatLeft": "<font color='{{c:xr}}' alpha='{{alive?#FF|#80}}'>{{vehicle}}</font>",
 			"vehicleFormatRight": "<font color='{{c:xr}}' alpha='{{alive?#FF|#80}}'>{{vehicle}}</font>",
 			// Shadow for vehicle name field (default null = no shadow, as in vanillas client).
@@ -433,7 +433,7 @@
 			// Ширина поля фрагов. По умолчанию: 24.
 			"fragsWidth": 24,
 			// Display format for frags (macros allowed, see macros.txt).
-			// Формат отображения фрагов (допускаются макроподстановки, см. macros.txt).
+			// Формат отображения фрагов (допускаются макроподстановки, см. macros_ru.txt).
 			"fragsFormatLeft": "{{frags}}",
 			"fragsFormatRight": "{{frags}}",
 			// Shadow for frags field (default null = no shadow, as in vanillas client).
@@ -476,7 +476,7 @@
 			// Ширина поля названия танка. По умолчанию: 72.
 			"vehicleWidth": 72,
 			// Display format for vehicle name (macros allowed, see macros.txt).
-			// Формат отображения названия танка (допускаются макроподстановки, см. macros.txt).
+			// Формат отображения названия танка (допускаются макроподстановки, см. macros_ru.txt).
 			"vehicleFormatLeft": "<font color='{{c:xr}}' alpha='{{alive?#FF|#80}}'>{{vehicle}}</font>",
 			"vehicleFormatRight": "<font color='{{c:xr}}' alpha='{{alive?#FF|#80}}'>{{vehicle}}</font>",
 			// Shadow for vehicle name field (default null = no shadow, as in vanillas client).
@@ -545,7 +545,7 @@
 			// Ширина поля фрагов. По умолчанию: 24.
 			"fragsWidth": 24,
 			// Display format for frags (macros allowed, see macros.txt).
-			// Формат отображения фрагов (допускаются макроподстановки, см. macros.txt).
+			// Формат отображения фрагов (допускаются макроподстановки, см. macros_ru.txt).
 			"fragsFormatLeft": "{{frags}}",
 			"fragsFormatRight": "{{frags}}",
 			// Shadow for frags field (default null = no shadow, as in vanillas client).
@@ -588,7 +588,7 @@
 			// Ширина поля названия танка. По умолчанию: 72.
 			"vehicleWidth": 72,
 			// Display format for vehicle name (macros allowed, see macros.txt).
-			// Формат отображения названия танка (допускаются макроподстановки, см. macros.txt).
+			// Формат отображения названия танка (допускаются макроподстановки, см. macros_ru.txt).
 			"vehicleFormatLeft": "{{vehicle}}",
 			"vehicleFormatRight": "{{vehicle}}",
 			// Shadow for vehicle name field (default null = no shadow, as in vanillas client).
