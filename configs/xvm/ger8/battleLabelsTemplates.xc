@@ -12,10 +12,10 @@
 			"enabled": true,
 			"updateEvent": "PY(ON_TOTAL_EFFICIENCY), ON_PANEL_MODE_CHANGED",
 			"x": "{{pp.mode=0?{{battletype-key=epic_battle?240|5}}|{{py:sum({{pp.widthLeft}},50)}}}}",
-			"y": "{{pp.mode=0?{{battletype-key=epic_battle?55|65}}|35}}",
+			"y": "40", //"{{pp.mode=0?{{battletype-key=epic_battle?55|65}}|35}}",
 			"width": 300,
 			"height": 22,
-			"textFormat": { "color": "0xF4EFE8", "size": 15 },
+			"textFormat": { "color": "0xF4EFE8", "size": 12 },
 			"format": "{{py:xvm.totalDamage=0?{{l10n:Hits}}: <font size='13'>#0</font>|{{l10n:Hits}}: <font size='13'>#{{py:xvm.numberHitsDealt}}</font> {{l10n:Total}}: <font color='{{py:xvm.totalDamageColor}}'><b>{{py:xvm.totalDamage}}</b></font> {{l10n:Last}}: <font color='{{py:xvm.dmgKindColor}}'><b>{{py:xvm.dmg}}</b></font>}}"
 		},
 		// Log of applied damage (see hitLog.xc).
@@ -28,7 +28,7 @@
 			"width": 400,
 			"height": 400,
 			"layer": "normal",
-			"textFormat": { "color": "0xF4EFE8", "size": 15 },
+			"textFormat": { "color": "0xF4EFE8", "size": 12 },
 			"format": "{{py:xvm.hitLog.log}}",
 			"mouseEvents": {
 				"mouseDown": "hitLog_mouseDown",
@@ -49,11 +49,11 @@
 		"totalEfficiency": {
 			"enabled": true,
 			"updateEvent": "PY(ON_TOTAL_EFFICIENCY), ON_PANEL_MODE_CHANGED",
-			"x": "{{pp.mode=0?{{battletype-key=epic_battle?240|5}}|{{py:sum({{pp.widthLeft}},50)}}}}",
-			"y": "{{pp.mode=0?{{battletype-key=epic_battle?55|65}}|35}}",
+			"x": "240", //"{{pp.mode=0?{{battletype-key=epic_battle?240|5}}|{{py:sum({{pp.widthLeft}},50)}}}}",
+			"y": "-210", //"{{pp.mode=0?{{battletype-key=epic_battle?55|65}}|35}}",
 			"width": "{{py:xvm.isStuns?350|260}}",
 			"height": 22,
-			"textFormat": { "size": 16 },
+			"textFormat": { "size": 12 },
 			"format": "<textformat tabstops='[65,130,196,261]' leading='-2'><img src='xvm://res/icons/Efficiency/damage.png' vspace='-2'> <font color='{{py:xvm.totalDamage>0?{{py:xvm.totalDamageColor}}}}'>{{py:xvm.totalDamage}}</font><tab><img src='xvm://res/icons/Efficiency/assist.png' vspace='-2'> {{py:xvm.totalAssist}}<tab><img src='xvm://res/icons/Efficiency/reflect.png' vspace='-2'> {{py:xvm.totalBlocked}}<tab><img src='xvm://res/icons/Efficiency/discover.png' vspace='-2'> {{py:xvm.detection}}<tab><img src='xvm://res/icons/Efficiency/stun.png' vspace='-2'> {{py:xvm.totalStun}}</textformat>"
 		},
 		// Total hp indicator.
@@ -66,7 +66,7 @@
 			"screenHAlign": "center",
 			"align": "center",
 			"shadow": { "distance": 1, "angle": 90, "alpha": 80, "blur": 5, "strength": 1.5 },
-			"textFormat": { "font": "mono", "size": 18, "align": "center" },
+			"textFormat": { "font": "mono", "size": 15, "align": "center" },
 			"format": "{{battletype-key!=epic_battle?{{py:xvm.total_hp.text}}}}"
 		},
 		// Avg damage on current vehicle.
@@ -117,7 +117,7 @@
 				"knockout": "{{py:xvm.damageLog.log.shadow('knockout')}}",
 				"quality": "{{py:xvm.damageLog.log.shadow('quality')}}"
 			},
-			"textFormat": { "color": "0xF4EFE8", "size": 16 },
+			"textFormat": { "color": "0xF4EFE8", "size": 12 },
 			"format": "{{py:xvm.damageLog.log}}",
 			"mouseEvents": {
 				"mouseDown": "damageLog_mouseDown",

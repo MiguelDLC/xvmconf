@@ -47,7 +47,8 @@ BATTLE_TYPE = {ARENA_GUI_TYPE.UNKNOWN: "unknown",
                ARENA_GUI_TYPE.EPIC_RANDOM_TRAINING: "epic_random_training",
                ARENA_GUI_TYPE.EPIC_BATTLE: "epic_battle",
                ARENA_GUI_TYPE.EPIC_TRAINING: "epic_battle",
-               ARENA_GUI_TYPE.BATTLE_ROYALE: "battle_royale"}
+               ARENA_GUI_TYPE.BATTLE_ROYALE: "battle_royale",
+               ARENA_GUI_TYPE.WEEKEND_BRAWL: "weekend_brawl"}
 
 HIT_LOG = 'hitLog/'
 FORMAT_HISTORY = 'formatHistory'
@@ -185,7 +186,7 @@ class DataHitLog(object):
         self.intCD = None
         self.splashHit = False
         self.criticalHit = False
-        self.compName = 'unknown'
+        self.compName = None
         self.battletypeKey = 'unknown'
         self.data = {
             'damage': 0,
@@ -358,9 +359,10 @@ class DataHitLog(object):
             maxHitEffectCode = maxPriorityHitPoint.hitEffectCode
             compName = decodedPoints[0].componentName
             self.compName = compName if compName[0] != 'W' else 'wheel'
+            self.criticalHit = (maxHitEffectCode == 5)
         else:
-            self.compName = 'unknown'
-        self.criticalHit = (maxHitEffectCode == 5)
+            self.compName = None
+            self.criticalHit = False
 
     def onEnterWorld(self, vehicle):
         self.macros.setChooseRating()
